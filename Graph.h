@@ -3,9 +3,11 @@
 
 class Graph
 {
+	Node **data;
 	int MAXSIZE;
 	Graph(int max = 100) {
 		MAXSIZE = max;
+		data = new Node[MAXSIZE]();
 	}
 	~Graph() {}
 
