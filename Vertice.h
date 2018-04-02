@@ -9,5 +9,5 @@ class Vertice {
 public:
 	char Name = '0';
 
-	LinkedList<Edge>* edges = new LinkedList<Edge>();
+	LinkedList* edges = new LinkedList<Edge>();
 };
