@@ -3,7 +3,10 @@
 
 class Graph
 {
-	Graph() {}
+	int MAXSIZE;
+	Graph(int max = 100) {
+		MAXSIZE = max;
+	}
 	~Graph() {}
 
 	
