@@ -1,11 +1,13 @@
 #pragma once
+#include "Node.h"
 
 class Graph
 {
 	Graph() {}
 	~Graph() {}
 
+	
 public:
-	addNode();
+	void addNode() {}
 
 };
