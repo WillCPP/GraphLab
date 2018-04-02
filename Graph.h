@@ -4,6 +4,7 @@
 class Graph
 {
 	int MAXSIZE;
+	Graph() {}
 	Graph(int max = 100) {
 		MAXSIZE = max;
 	}
