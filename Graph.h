@@ -17,6 +17,6 @@ public:
     bool hasEdge();
     outEdge();
     inEdge();
-    displayGraph();
+    void displayGraph();
 
 };
