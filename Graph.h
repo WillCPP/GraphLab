@@ -12,11 +12,11 @@ class Graph
 	
 public:
 	void addNode() {}
-	void removeEdge();
-	void addEdge();
-    bool hasEdge();
-    outEdge();
-    inEdge();
-    void displayGraph();
+	void removeEdge() {}
+	void addEdge() {}
+    bool hasEdge() {}
+    outEdge() {}
+    inEdge() {}
+    void displayGraph() {}
 
 };
