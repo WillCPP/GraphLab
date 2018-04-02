@@ -19,7 +19,7 @@ public:
 		data[i] = new Vertice(i);
 	}
 	void removeEdge(int i, int j) {
-		data[i]->edges.getItem(j)
+		data[i]->edges.getItem(j);
 	}
 	void addEdge(int i, int j) {
 		data[i]->edges.addItem(j);
