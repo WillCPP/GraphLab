@@ -49,7 +49,7 @@ int main() {
 			cout << "Quiting..." << endl;
 			quit = true;
 			break; }
-		case 1: {//AddItem
+		case 1: {//Add Node to graph
 			string f = "";
 			string l = "";
 			string m = "";
@@ -75,7 +75,7 @@ int main() {
 			ll.addItem(s);
 			cout << "addItem was called." << endl;
 			break; }
-		case 2: {//GetItem
+		case 2: {//Add edge to graph
 			string m = "";
 			cout << "Enter M-Number: ";
 			cin >> m;
@@ -83,7 +83,7 @@ int main() {
 			Nodes<Student> *n = ll.getItem(s);
 			cout << "getItem was called" << endl;
 			break; }
-		case 3: {//IsInList
+		case 3: {//remove an edge from graph
 			string m = "";
 			cout << "Enter M-Number: ";
 			cin >> m;
@@ -98,7 +98,7 @@ int main() {
 				cout << "Item is not in list." << endl;
 			}
 			break; }
-		case 4: {//IsEmpty
+		case 4: {//Find edge in grpah
 			bool b = ll.isEmpty();
 			if (b)
 			{
@@ -109,15 +109,15 @@ int main() {
 				cout << "List is not empty." << endl;
 			}
 			break; }
-		case 5: {//Size
+		case 5: {//Find out edges of node
 			int s = ll.size();
 			cout << "Size: " << s << " items" << endl;
 			break; }
-		case 6: {//Reset
+		case 6: {//Find in edges of node
 			ll.reset();
 			cout << "reset was called" << endl;
 			break; }
-		case 7: {
+		case 7: {// Display the graph as adjancency lists
 			ll.displayList();
 			break; }
 		}

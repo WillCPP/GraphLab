@@ -4,10 +4,10 @@
 
 class Vertice {
 	Vertice() {}
-	Vertice(char c) { Name = c; }
-	Vertice(char c, Edge* e) { Name = c; }
+	Vertice(int c) { Name = c; }
+	Vertice(int c, Edge* e) { Name = c; }
 public:
-	char Name = '0';
+	int Name = -1;
 
 	LinkedList* edges = new LinkedList();
 };

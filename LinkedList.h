@@ -118,7 +118,7 @@ public:
 		while (location<leng) {//Prints each item 
 			cout << "*************************" << endl;
 			cout << "       Node: " << location << endl;
-			seeNext()->data.DisplayData();
+			//seeNext()->data.DisplayData();
 			cout << "*************************" << endl << endl << endl;
 		}
 		location = temp;//reset location to its previous spot
