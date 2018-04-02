@@ -10,5 +10,5 @@ public:
 
 	int Name = -1;
 
-	LinkedList* edges = new LinkedList();
+	LinkedList edges;
 };

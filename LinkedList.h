@@ -8,7 +8,7 @@ class LinkedList
 	int leng = 0;	//length of linked list
 	int location = 0;	//Location used for See functions
 public:
-	Edge *first;
+	Edge *first = nullptr;
 	LinkedList() {
 
 	}
