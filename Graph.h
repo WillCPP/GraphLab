@@ -15,10 +15,16 @@ class Graph
 
 	
 public:
-	void addNode(int *i) {}
-	void removeEdge(int *i, int *j) {}
-	void addEdge(int *i, int *j) {}
-    bool hasEdge(int *i, int *j) {}
+	void addNode(int i) {
+		data[i] = new Vertice(i);
+	}
+	void removeEdge(int i, int j) {
+		data[i]->edges.getItem(j)
+	}
+	void addEdge(int i, int j) {
+		data[i]->edges.addItem(j);
+	}
+    bool hasEdge(int i, int j) {}
     int outEdge() {}
     int inEdge() {}
     void displayGraph() {}
