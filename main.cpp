@@ -14,7 +14,7 @@ int main() {
 	int choice = -1;
 	bool validChoice = false;
 
-	LinkedList ll;
+	Graph graph;
 
 	do
 	{
@@ -50,42 +50,25 @@ int main() {
 			quit = true;
 			break; }
 		case 1: {//Add Node to graph
-			string f = "";
-			string l = "";
-			string m = "";
-			double gpa = 0.0;
-			int year = 0;
-			int month = 0;
-			int day = 0;
-			cout << "Enter first name: ";
-			cin >> f;
-			cout << "Enter last name: ";
-			cin >> l;
-			cout << "Enter M-Number: ";
-			cin >> m;
-			cout << "Enter GPA: ";
-			cin >> gpa;
-			cout << "Enter birth year: ";
-			cin >> year;
-			cout << "Enter birth month: ";
-			cin >> month;
-			cout << "Enter birth day: ";
-			cin >> day;
-			Student s(f, l, m, Date(day, month, year), gpa);
-			ll.addItem(s);
-			cout << "addItem was called." << endl;
+			int in;
+			cout << "Enter value of node: ";
+			cin >> in;
+			graph.addNode(in);
+			cout << "Add node was called." << endl;
 			break; }
 		case 2: {//Add edge to graph
-			string m = "";
-			cout << "Enter M-Number: ";
-			cin >> m;
-			Student s("", "", m, Date(0, 0, 0), 0.0);
-			Nodes<Student> *n = ll.getItem(s);
-			cout << "getItem was called" << endl;
+			int node;
+			int edge;
+			cout << "Enter value of node: ";
+			cin >> node;
+			cout << "Enter value of edge: ";
+			cin >> edge;
+			graph.addEdge(node,edge);
+			cout << "Add edge was called" << endl;
 			break; }
 		case 3: {//remove an edge from graph
-			string m = "";
-			cout << "Enter M-Number: ";
+			int in;
+			cout << "Enter value of node: ";
 			cin >> m;
 			Student s("", "", m, Date(0, 0, 0), 0.0);
 			bool b = ll.isInList(s);
