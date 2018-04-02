@@ -15,21 +15,6 @@ class Graph
 
 	
 public:
-<<<<<<< HEAD
-		data = new Vertice*[MAXSIZE]();
-	}
-	~Graph() {}
-
-	
-public:
-	void addNode() {}
-	void addNode(int *i) {}
-	void removeEdge(int *i, int *j) {}
-	void addEdge(int *i, int *j) {}
-    bool hasEdge(int *i, int *j) {}
-    outEdge() {}
-    inEdge() {}
-=======
 	void addNode(int i) {
 		data[i] = new Vertice(i);
 	}
@@ -42,7 +27,6 @@ public:
     bool hasEdge(int i, int j) {}
     int outEdge() {}
     int inEdge() {}
->>>>>>> 001c2d2a0ff0c7ad8cea1c4e6e191d63b88f7d0d
     void displayGraph() {}
 
 };
