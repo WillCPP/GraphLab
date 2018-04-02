@@ -5,6 +5,6 @@ public:
 	Edge(int c) { data = c; }
 	~Edge() {}
 
-	int data = '0';
+	int data = 0;
 	Edge *next = nullptr;
 };
