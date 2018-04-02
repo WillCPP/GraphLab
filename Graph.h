@@ -1,5 +1,5 @@
 #pragma once
-#include "Node.h"
+#include "Edge.h"
 
 class Graph
 {
