@@ -1,5 +1,5 @@
 #pragma once
-#include "Node.h"
+#include "Edge.h"
 
 class Graph
 {
@@ -19,6 +19,6 @@ public:
     bool hasEdge();
     outEdge();
     inEdge();
-    displayGraph();
+    void displayGraph();
 
 };

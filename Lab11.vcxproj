@@ -122,7 +122,8 @@
     <ClInclude Include="Edge.h" />
     <ClInclude Include="Graph.h" />
     <ClInclude Include="LinkedList.h" />
-    <ClInclude Include="Node.h" />
+    <ClInclude Include="Vertice.h" />
+    <ClInclude Include="Nodes.h" />
     <ClInclude Include="OverShotException.h" />
     <ClInclude Include="UnderFlowException.h" />
   </ItemGroup>
