@@ -11,7 +11,10 @@ class Graph
 	int MAXSIZE;
 	
 public:
-	Graph() { Graph(100); }
+	Graph() { 
+		MAXSIZE = 100;
+		data = new Vertice*[MAXSIZE]();
+	}
 	Graph(int max) {
 		MAXSIZE = max;
 		data = new Vertice*[MAXSIZE]();
