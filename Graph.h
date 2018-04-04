@@ -3,7 +3,6 @@
 #include "Vertice.h"
 #include <vector>
 #include <list>
-#include <iomanip>
 using namespace std;
 
 class Graph
@@ -12,7 +11,10 @@ class Graph
 	int MAXSIZE;
 	
 public:
-	Graph() { Graph(100); }
+	Graph() { 
+		MAXSIZE = 100;
+		data = new Vertice*[MAXSIZE]();
+	}
 	Graph(int max) {
 		MAXSIZE = max;
 		data = new Vertice*[MAXSIZE]();
@@ -82,7 +84,7 @@ public:
 	}
     
 	void breadthFS(int i) {
-		bool *visited = new bool[MAXSIZE]; //vertices not visited are marked
+		vector<bool>*visited = new bool[MAXSIZE]; //vertices not visited are marked
 		for (int j = 0; j < n; j++){
 			visited[j] = false;
 		}
@@ -94,7 +96,7 @@ public:
 			i = queue.front();
 			cout << i << " ";
 			queue.pop_front();
-			for ( int j = deq[i].begin(); i != deq[i].end(); ++j) {
+			for ( int j = 0; i < MAXSIZE; j++) {
 				if (!visited[*j]){ //if a vertice hasn't been visited, enqueue it and mark it as visited
 					visited[*j] = true;
 					queue.push_back(*j);
@@ -102,7 +104,26 @@ public:
 			}
 		}
 	}
-	void depthFS(int i) {}
+	list<int> depthFS(int i) {
+		vector<bool>*visited
+		stack<int>stack; //creates a stack
+		stack.push(i); //will push current node
+		while(!stack.empty()) {
+			i = stack.top();
+			stack.pop();
+			if(!visited[i]){ //if not visited
+			cout << i << " ";
+			visited[i] = true;
+			
+			}
+			for ( int j = 0; i < MAXSIZE; j++) { //if not visited, push in stack
+				stack.push(adj[i]);
+		}
+	  }
+	}
+		
+	}
+
 	void displayGraph() {
 		cout << "*****Displaying Graph*****" << endl;
 		cout << "Nodes|  Edges" << endl;
@@ -114,6 +135,7 @@ public:
 			}
 			cout << "*********************" << endl;
 		}
+
 	}
 
 };
