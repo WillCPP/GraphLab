@@ -50,21 +50,32 @@ public:
 			return false;
 		}
 	}
-	vector<int> outEdge(int i) {
-		if (data[i] == nullptr) {
+	vector<int> outEdge(int n) {
+		if (data[n] == nullptr) {
 			cout << "Node not found" << endl;
 			return vector<int>();
 		}
-		int size = data[i]->edges.size();
-		vector<int> retArr;
-		data[i]->edges.seeAt(0);
+		int size = data[n]->edges.size();
+		vector<int> retVec;
+		data[n]->edges.seeAt(0);
 		for (int i = 0; i < size; i++) {
 			int j = data[i]->edges.seeNext()->data;
-			retArr.push_back(j);
+			retVec.push_back(j);
 		}
-		return retArr;
+		return retVec;
 	}
-    vector<int> inEdge(int i) {}
+    vector<int> inEdge(int n) {
+		vector<int> retVec;
+		Vertice v;
+		for (int i = 0; i < MAXSIZE; i++)
+		{
+			v = *data[i];
+			if (v.edges.findItem(n) != nullptr)
+			{
+				retVec.push_back(i);
+			}
+		}
+	}
     
 	void breadthFS(int i) {}
 	void depthFS(int i) {}
