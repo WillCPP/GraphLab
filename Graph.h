@@ -79,16 +79,11 @@ public:
 	}
     
 	void breadthFS(int i) {
-<<<<<<< HEAD
-		bool *visited  = new bool[n] //vertices not visited are marked
-		for (int j = 0; j < n; j++){
+		bool *visited = new bool[n]; //vertices not visited are marked
+		for(int j = 0; j < n; j++){
 			visited[j] = false;
 		}
 		list <int> queue; //queue created
-=======
-		bool *visited = new bool; //vertices not visited
-		list<int> queue; //queue created
->>>>>>> f345122ad779a164d2d285e133e4c82323d44c69
 		visited[i] = true; //node is visited, enqueued
 		queue.push_back(i);
 		
@@ -105,6 +100,4 @@ public:
 		}
 	}
 	void depthFS(int i) {}
-	
-
 };
