@@ -1,13 +1,16 @@
 #pragma once
 #include "Edge.h"
 #include "Vertice.h"
+#include <vector>
+using namespace std;
 
 class Graph
 {
 	Vertice **data;
 	int MAXSIZE;
-	Graph() {}
-	Graph(int max = 100) {
+public:
+	Graph() { Graph(100); }
+	Graph(int max) {
 		MAXSIZE = max;
 		data = new Vertice*[MAXSIZE]();
 	}
@@ -47,49 +50,21 @@ public:
 			return false;
 		}
 	}
-	int[] outEdge(int i) {
+	vector<int> outEdge(int i) {
 		if (data[i] == nullptr) {
 			cout << "Node not found" << endl;
-			return int[0];
+			return vector<int>();
 		}
 		int size = data[i]->edges.size();
-		int retArr[size];
+		vector<int> retArr;
 		data[i]->edges.seeAt(0);
 		for (int i = 0; i < size; i++) {
-			int j = data[i]->edges.seeNext().data;
-			retArr[i] = j;
+			int j = data[i]->edges.seeNext()->data;
+			retArr.push_back(j);
 		}
 		return retArr;
 	}
-    int inEdge(int i) {}
-    void displayGraph() {}
-<<<<<<<<< saved version
-			if (check == nullptr)
-=========
-				return false;
-			return true;
-		}
-		else {
-			cout << "Node not found, could not find edge" << endl;
-			return false;
-		}
-	}
-	int[] outEdge(int i) {
-		if (data[i] == nullptr) {
-			cout << "Node not found" << endl;
-			return int[0];
-		}
-		int size = data[i]->edges.size();
-		int retArr[size];
-		data[i]->edges.seeAt(0);
-		for (int i = 0; i < size; i++) {
-			int j = data[i]->edges.seeNext().data;
-			retArr[i] = j;
-		}
-		return retArr;
-	}
-    int inEdge(int i) {}
-    void displayGraph() {}
+    vector<int> inEdge(int i) {}
     
 	void breadthFS(int i) {
 		bool *visited  = new bool //vertices not visited
@@ -104,6 +79,9 @@ public:
 	}
 	void depthFS(int i) {}
 	
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 6e6fb892a32a82489e7c4dc058183014368d55b7
 };
