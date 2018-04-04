@@ -2,6 +2,7 @@
 #include "Edge.h"
 #include "Vertice.h"
 #include <vector>
+#include <list>
 using namespace std;
 
 class Graph
@@ -78,8 +79,8 @@ public:
 	}
     
 	void breadthFS(int i) {
-		bool *visited  = new bool //vertices not visited
-		list <int> queue; //queue created
+		bool *visited = new bool; //vertices not visited
+		list<int> queue; //queue created
 		visited[i] = true; //node is visited, enqueued
 		queue.push_back(i);
 		
