@@ -77,11 +77,17 @@ public:
 				retList.push_back(i);
 			}
 		}
+		return retList;
 	}
     
+<<<<<<< HEAD
 	list<int> breadthFS(int i) {
 
 		bool *visited  = new bool[data] //vertices not visited are marked
+=======
+	void breadthFS(int i) {
+		bool *visited = new bool[MAXSIZE]; //vertices not visited are marked
+>>>>>>> 632747adcbfebd0bed5cbed2d8aefddedbb7d936
 		for (int j = 0; j < n; j++){
 			visited[j] = false;
 		}
