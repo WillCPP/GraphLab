@@ -52,29 +52,29 @@ public:
 			return false;
 		}
 	}
-	vector<int> outEdge(int n) {
+	list<int> outEdge(int n) {
 		if (data[n] == nullptr) {
 			cout << "Node not found" << endl;
-			return vector<int>();
+			return list<int>();
 		}
 		int size = data[n]->edges.size();
-		vector<int> retVec;
+		list<int> retList;
 		data[n]->edges.seeAt(0);
 		for (int i = 0; i < size; i++) {
 			int j = data[i]->edges.seeNext()->data;
-			retVec.push_back(j);
+			retList.push_back(j);
 		}
-		return retVec;
+		return retList;
 	}
-    vector<int> inEdge(int n) {
-		vector<int> retVec;
+    list<int> inEdge(int n) {
+		list<int> retList;
 		Vertice v;
 		for (int i = 0; i < MAXSIZE; i++)
 		{
 			v = *data[i];
 			if (v.edges.findItem(n) != nullptr)
 			{
-				retVec.push_back(i);
+				retList.push_back(i);
 			}
 		}
 	}
@@ -101,10 +101,17 @@ public:
 			}
 		}
 	}
+<<<<<<< HEAD
 	void depthFS(int i) {
 		
 		
 	}
 	
+=======
+	void depthFS(int i) {}
+	void displayGraph() {
+
+	}
+>>>>>>> 5e762b500dc4b2332b4b460e4ac8b6aa0ccd4b41
 
 };

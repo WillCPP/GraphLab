@@ -66,7 +66,6 @@ public:
 
 	}
 	Edge* findItem(int inval) {
-		Edge *retval;//Ptr which will be used to point to node being removed
 		if (first == nullptr)//List is empty
 			return nullptr;//Returns nullptr as told in lab 8 doc
 		if (first->data == inval) {//inval matches first item in list
