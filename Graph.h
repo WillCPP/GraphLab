@@ -9,6 +9,7 @@ class Graph
 {
 	Vertice **data;
 	int MAXSIZE;
+	
 public:
 	Graph() { Graph(100); }
 	Graph(int max) {
@@ -79,8 +80,9 @@ public:
 	}
     
 	void breadthFS(int i) {
-		bool *visited = new bool[n]; //vertices not visited are marked
-		for(int j = 0; j < n; j++){
+
+		bool *visited  = new bool[data] //vertices not visited are marked
+		for (int j = 0; j < n; j++){
 			visited[j] = false;
 		}
 		list <int> queue; //queue created
@@ -91,7 +93,7 @@ public:
 			i = queue.front();
 			cout << i << " ";
 			queue.pop_front();
-			for ( j = dequed[i].begin(); i != dequeued[i].end(); ++j) {
+			for ( int j = deq[i].begin(); i != deq[i].end(); ++j) {
 				if (!visited[*j]){ //if a vertice hasn't been visited, enqueue it and mark it as visited
 					visited[*j] = true;
 					queue.push_back(*j);
@@ -100,4 +102,8 @@ public:
 		}
 	}
 	void depthFS(int i) {}
+	void displayGraph() {
+
+	}
+
 };
