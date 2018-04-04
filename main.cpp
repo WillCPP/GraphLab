@@ -87,7 +87,7 @@ int main() {
 			if (graph.hasEdge(node, edge))
 				cout << "Edge does exist" << endl;
 			else
-				cout << "Edge does not exist" << end;
+				cout << "Edge does not exist" << endl;
 			break; }
 		case 5: {//Find out edges of node
 			int in;

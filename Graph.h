@@ -3,6 +3,9 @@
 #include "Vertice.h"
 #include <vector>
 #include <list>
+#include <stack>
+#include <queue>
+#include <iomanip>
 using namespace std;
 
 class Graph
@@ -21,7 +24,6 @@ public:
 	}
 	~Graph() {}
 
-	
 public:
 	void addNode(int i) {
 		if(data[i]==nullptr)
@@ -84,29 +86,29 @@ public:
 	}
     
 	void breadthFS(int i) {
-		vector<bool>*visited = new bool[MAXSIZE]; //vertices not visited are marked
-		for (int j = 0; j < n; j++){
+		vector<bool> visited(MAXSIZE); //vertices not visited are marked
+		for (int j = 0; j < MAXSIZE; j++){
 			visited[j] = false;
 		}
-		list <int> queue; //queue created
+		queue<int> queue; //queue created
 		visited[i] = true; //node is visited, enqueued
-		queue.push_back(i);
+		queue.push(i);
 		
 		while (!queue.empty()) { //dequeues a vertex from the queue 
 			i = queue.front();
 			cout << i << " ";
-			queue.pop_front();
-			for ( int j = 0; i < MAXSIZE; j++) {
-				if (!visited[*j]){ //if a vertice hasn't been visited, enqueue it and mark it as visited
-					visited[*j] = true;
-					queue.push_back(*j);
+			queue.pop();
+			for( int j = 0; j < MAXSIZE; j++) {
+				if (!visited[j]){ //if a vertice hasn't been visited, enqueue it and mark it as visited
+					visited[j] = true;
+					queue.push(j);
 				}
 			}
 		}
 	}
 	list<int> depthFS(int i) {
-		vector<bool>*visited
-		stack<int>stack; //creates a stack
+		vector<bool> visited(MAXSIZE);
+		stack<int> stack; //creates a stack
 		stack.push(i); //will push current node
 		while(!stack.empty()) {
 			i = stack.top();
@@ -116,12 +118,10 @@ public:
 			visited[i] = true;
 			
 			}
-			for ( int j = 0; i < MAXSIZE; j++) { //if not visited, push in stack
-				stack.push(adj[i]);
+			for ( int j = 0; j < MAXSIZE; j++) { //if not visited, push in stack
+				stack.push(i);
 		}
 	  }
-	}
-		
 	}
 
 	void displayGraph() {
