@@ -8,8 +8,9 @@ class Graph
 {
 	Vertice **data;
 	int MAXSIZE;
-	Graph() {}
-	Graph(int max = 100) {
+public:
+	Graph() { Graph(100); }
+	Graph(int max) {
 		MAXSIZE = max;
 		data = new Vertice*[MAXSIZE]();
 	}
@@ -64,38 +65,8 @@ public:
 		return retArr;
 	}
     vector<int> inEdge(int i) {}
-    void displayGraph() {}
-<<<<<<<<< saved version
-			if (check == nullptr)
-=========
-				return false;
-			return true;
-		}
-		else {
-			cout << "Node not found, could not find edge" << endl;
-			return false;
-		}
-	}
-	int[] outEdge(int i) {
-		if (data[i] == nullptr) {
-			cout << "Node not found" << endl;
-			return int[0];
-		}
-		int size = data[i]->edges.size();
-		int retArr[size];
-		data[i]->edges.seeAt(0);
-		for (int i = 0; i < size; i++) {
-			int j = data[i]->edges.seeNext().data;
-			retArr[i] = j;
-		}
-		return retArr;
-	}
-    int inEdge(int i) {}
-    void displayGraph() {}
     
 	void breadthFS(int i) {}
 	void depthFS(int i) {}
 	
->>>>>>>>> local version
-
 };
