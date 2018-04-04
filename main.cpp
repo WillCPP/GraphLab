@@ -29,7 +29,7 @@ int main() {
 			cout << "[6] Find In Edges of a Node" << endl;
 			cout << "[7] Display the graph as adjacency list" << endl;
 			cout << "[0] Quit" << endl;
-			cout << "Enter 0-8: ";
+			cout << "Enter 0-8: " << endl;
 			cin >> choice;
 			if (choice >= 0 && choice <= 8)
 			{
@@ -73,7 +73,8 @@ int main() {
 			cin >> node;
 			cout << "Enter value of edge: ";
 			cin >> edge;
-			graph.removeEdge(node, edge);
+			if (graph.removeEdge(node, edge) == nullptr)
+				cout << "Edge was not found" << endl;;
 			cout << "Remove edge was called" << endl;
 			break; }
 		case 4: {//Find edge in grpah
@@ -83,8 +84,10 @@ int main() {
 			cin >> node;
 			cout << "Enter value of edge: ";
 			cin >> edge;
-			graph.hasEdge(node, edge);
-			cout << "Has edge was called" << endl;
+			if (graph.hasEdge(node, edge))
+				cout << "Edge does exist" << endl;
+			else
+				cout << "Edge does not exist" << end;
 			break; }
 		case 5: {//Find out edges of node
 			int in;
@@ -101,7 +104,6 @@ int main() {
 			cout << "In edge was called" << endl;
 			break; }
 		case 7: {// Display the graph as adjancency lists
-			cout << "In edge was called" << endl;
 			graph.displayGraph();
 			break; }
 		}

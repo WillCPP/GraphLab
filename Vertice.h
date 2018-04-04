@@ -8,7 +8,7 @@ public:
 	Vertice(int c) { Name = c; }
 	Vertice(int c, Edge* e) { Name = c; }
 
-	int Name = -1;
+	int Name = 0;
 
 	LinkedList edges;
 };
