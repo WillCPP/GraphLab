@@ -67,14 +67,24 @@ public:
     vector<int> inEdge(int i) {}
     
 	void breadthFS(int i) {
-		bool *visited  = new bool //vertices not visited
+		bool *visited  = new bool[n] //vertices not visited are marked
+		for (int j = 0; j < n; j++){
+			visited[j] = false;
+		}
 		list <int> queue; //queue created
 		visited[i] = true; //node is visited, enqueued
 		queue.push_back(i);
 		
 		while (!queue.empty()) { //dequeues a vertex from the queue 
 			i = queue.front();
+			cout << i << " ";
 			queue.pop_front();
+			for ( j = dequed[i].begin(); i != dequeued[i].end(); ++j) {
+				if (!visited[*j]){ //if a vertice hasn't been visited, enqueue it and mark it as visited
+					visited[*j] = true;
+					queue.push_back(*j);
+				}
+			}
 		}
 	}
 	void depthFS(int i) {}
