@@ -88,7 +88,7 @@ public:
 		for (int j = 0; j < n; j++){
 			visited[j] = false;
 		}
-		list <int> queue; //queue created
+		list<int>queue; //queue created
 		visited[i] = true; //node is visited, enqueued
 		queue.push_back(i);
 		
@@ -100,10 +100,10 @@ public:
 				if (!visited[*j]){ //if a vertice hasn't been visited, enqueue it and mark it as visited
 					visited[*j] = true;
 					queue.push_back(*j);
-				}
 			}
 		}
 	}
+}
 	list<int> depthFS(int i) {
 		vector<bool>*visited
 		stack<int>stack; //creates a stack
