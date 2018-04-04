@@ -3,6 +3,7 @@
 #include "Vertice.h"
 #include <vector>
 #include <list>
+#include <iomanip>
 using namespace std;
 
 class Graph
@@ -103,7 +104,16 @@ public:
 	}
 	void depthFS(int i) {}
 	void displayGraph() {
-
+		cout << "*****Displaying Graph*****" << endl;
+		cout << "Nodes|  Edges" << endl;
+		for (int i = 0; i < MAXSIZE; i++) {
+			if (data[i] != nullptr) {
+				cout << setw(5) << data[i]->Name;
+				cout << "|";
+				data[i]->edges.displayList();
+			}
+			cout << "*********************" << endl;
+		}
 	}
 
 };
