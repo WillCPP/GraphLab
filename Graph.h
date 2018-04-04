@@ -132,10 +132,11 @@ public:
 				cout << setw(5) << data[i]->Name;
 				cout << "|";
 				data[i]->edges.displayList();
+				cout << endl;
 			}
-			cout << "*********************" << endl;
+			
 		}
-
+		cout << "*********************" << endl;
 	}
 
 };
