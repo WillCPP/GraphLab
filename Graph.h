@@ -1,6 +1,8 @@
 #pragma once
 #include "Edge.h"
 #include "Vertice.h"
+#include <vector>
+using namespace std;
 
 class Graph
 {
@@ -48,21 +50,21 @@ public:
 			return false;
 		}
 	}
-	int[] outEdge(int i) {
+	vector<int> outEdge(int i) {
 		if (data[i] == nullptr) {
 			cout << "Node not found" << endl;
-			return int[0];
+			return vector<int>();
 		}
 		int size = data[i]->edges.size();
-		int retArr[size];
+		vector<int> retArr;
 		data[i]->edges.seeAt(0);
 		for (int i = 0; i < size; i++) {
-			int j = data[i]->edges.seeNext().data;
-			retArr[i] = j;
+			int j = data[i]->edges.seeNext()->data;
+			retArr.push_back(j);
 		}
 		return retArr;
 	}
-    int inEdge(int i) {}
+    vector<int> inEdge(int i) {}
     void displayGraph() {}
 
 };

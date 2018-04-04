@@ -69,39 +69,20 @@ int main() {
 		case 3: {//remove an edge from graph
 			int in;
 			cout << "Enter value of node: ";
-			cin >> m;
-			Student s("", "", m, Date(0, 0, 0), 0.0);
-			bool b = ll.isInList(s);
-			if (b)
-			{
-				cout << "Item is in list." << endl;
-			}
-			else
-			{
-				cout << "Item is not in list." << endl;
-			}
+			cin >> in;
+			
 			break; }
 		case 4: {//Find edge in grpah
-			bool b = ll.isEmpty();
-			if (b)
-			{
-				cout << "List is empty." << endl;
-			}
-			else
-			{
-				cout << "List is not empty." << endl;
-			}
+			
 			break; }
 		case 5: {//Find out edges of node
-			int s = ll.size();
-			cout << "Size: " << s << " items" << endl;
+			
 			break; }
 		case 6: {//Find in edges of node
-			ll.reset();
-			cout << "reset was called" << endl;
+			
 			break; }
 		case 7: {// Display the graph as adjancency lists
-			ll.displayList();
+			
 			break; }
 		}
 		cout << endl;
