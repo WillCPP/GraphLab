@@ -77,7 +77,18 @@ public:
 		}
 	}
     
-	void breadthFS(int i) {}
+	void breadthFS(int i) {
+		bool *visited  = new bool //vertices not visited
+		list <int> queue; //queue created
+		visited[i] = true; //node is visited, enqueued
+		queue.push_back(i);
+		
+		while (!queue.empty()) { //dequeues a vertex from the queue 
+			i = queue.front();
+			queue.pop_front();
+		}
+	}
 	void depthFS(int i) {}
 	
+
 };
