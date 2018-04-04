@@ -79,9 +79,5 @@ public:
 	}
 	void depthFS(int i) {}
 	
-<<<<<<< HEAD
 
-
-=======
->>>>>>> 6e6fb892a32a82489e7c4dc058183014368d55b7
 };
