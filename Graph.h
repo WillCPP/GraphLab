@@ -6,6 +6,7 @@ class Graph
 {
 	Vertice **data;
 	int MAXSIZE;
+public:
 	Graph() { Graph(100); }
 	Graph(int max) {
 		MAXSIZE = max;
