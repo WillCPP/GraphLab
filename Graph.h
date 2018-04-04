@@ -80,14 +80,8 @@ public:
 		return retList;
 	}
     
-<<<<<<< HEAD
-	list<int> breadthFS(int i) {
-
-		bool *visited  = new bool[data] //vertices not visited are marked
-=======
 	void breadthFS(int i) {
-		bool *visited = new bool[MAXSIZE]; //vertices not visited are marked
->>>>>>> 632747adcbfebd0bed5cbed2d8aefddedbb7d936
+		vector<bool>*visited = new bool[MAXSIZE]; //vertices not visited are marked
 		for (int j = 0; j < n; j++){
 			visited[j] = false;
 		}
@@ -99,8 +93,7 @@ public:
 			i = queue.front();
 			cout << i << " ";
 			queue.pop_front();
-			vector<int*>*adj = this->outEdge(new int (i));
-			for ( int j = 0; i < adj.size(); j++) {
+			for ( int j = 0; i < MAXSIZE; j++) {
 				if (!visited[*j]){ //if a vertice hasn't been visited, enqueue it and mark it as visited
 					visited[*j] = true;
 					queue.push_back(*j);
@@ -109,7 +102,7 @@ public:
 		}
 	}
 	list<int> depthFS(int i) {
-		vector<bool> &visited
+		vector<bool>*visited
 		stack<int>stack; //creates a stack
 		stack.push(i); //will push current node
 		while(!stack.empty()) {
@@ -120,8 +113,7 @@ public:
 			visited[i] = true;
 			
 			}
-			vector<int*>*adj = this->outEdge(new int (*i)); //get all adjacent vertices
-			for ( int j = 0; i < adj.size(); j++) { //if not visited, push in stack
+			for ( int j = 0; i < MAXSIZE; j++) { //if not visited, push in stack
 				stack.push(adj[i]);
 		}
 	  }
