@@ -67,22 +67,42 @@ int main() {
 			cout << "Add edge was called" << endl;
 			break; }
 		case 3: {//remove an edge from graph
+			int node;
+			int edge;
+			cout << "Enter value of node: ";
+			cin >> node;
+			cout << "Enter value of edge: ";
+			cin >> edge;
+			graph.removeEdge(node, edge);
+			cout << "Remove edge was called" << endl;
+			break; }
+		case 4: {//Find edge in grpah
+			int node;
+			int edge;
+			cout << "Enter value of node: ";
+			cin >> node;
+			cout << "Enter value of edge: ";
+			cin >> edge;
+			graph.hasEdge(node, edge);
+			cout << "Has edge was called" << endl;
+			break; }
+		case 5: {//Find out edges of node
 			int in;
 			cout << "Enter value of node: ";
 			cin >> in;
-			
-			break; }
-		case 4: {//Find edge in grpah
-			
-			break; }
-		case 5: {//Find out edges of node
-			
+			graph.outEdge(in);
+			cout << "Out edge was called" << endl;
 			break; }
 		case 6: {//Find in edges of node
-			
+			int in;
+			cout << "Enter value of node: ";
+			cin >> in;
+			graph.inEdge(in);
+			cout << "In edge was called" << endl;
 			break; }
 		case 7: {// Display the graph as adjancency lists
-			
+			cout << "In edge was called" << endl;
+			graph.displayGraph();
 			break; }
 		}
 		cout << endl;

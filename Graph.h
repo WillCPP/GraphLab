@@ -78,6 +78,8 @@ public:
 		}
 	}
 	void depthFS(int i) {}
-	
+	void displayGraph() {
+
+	}
 
 };
