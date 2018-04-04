@@ -3,7 +3,6 @@
 #include "Vertice.h"
 #include <vector>
 #include <list>
-#include <iomanip>
 using namespace std;
 
 class Graph
@@ -80,7 +79,7 @@ public:
 		}
 	}
     
-	void breadthFS(int i) {
+	list<int> breadthFS(int i) {
 
 		bool *visited  = new bool[data] //vertices not visited are marked
 		for (int j = 0; j < n; j++){
@@ -94,7 +93,8 @@ public:
 			i = queue.front();
 			cout << i << " ";
 			queue.pop_front();
-			for ( int j = deq[i].begin(); i != deq[i].end(); ++j) {
+			vector<int*>*adj = this->outEdge(new int (i));
+			for ( int j = 0; i < adj.size(); j++) {
 				if (!visited[*j]){ //if a vertice hasn't been visited, enqueue it and mark it as visited
 					visited[*j] = true;
 					queue.push_back(*j);
@@ -102,7 +102,27 @@ public:
 			}
 		}
 	}
-	void depthFS(int i) {}
+	list<int> depthFS(int i) {
+		vector<bool> &visited
+		stack<int>stack; //creates a stack
+		stack.push(i); //will push current node
+		while(!stack.empty()) {
+			i = stack.top();
+			stack.pop();
+			if(!visited[i]){ //if not visited
+			cout << i << " ";
+			visited[i] = true;
+			
+			}
+			vector<int*>*adj = this->outEdge(new int (*i)); //get all adjacent vertices
+			for ( int j = 0; i < adj.size(); j++) { //if not visited, push in stack
+				stack.push(adj[i]);
+		}
+	  }
+	}
+		
+	}
+
 	void displayGraph() {
 		cout << "*****Displaying Graph*****" << endl;
 		cout << "Nodes|  Edges" << endl;
@@ -114,6 +134,7 @@ public:
 			}
 			cout << "*********************" << endl;
 		}
+
 	}
 
 };
