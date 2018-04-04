@@ -2,6 +2,7 @@
 #include "Edge.h"
 #include "Vertice.h"
 #include <vector>
+#include <list>
 using namespace std;
 
 class Graph
@@ -50,31 +51,57 @@ public:
 			return false;
 		}
 	}
-	vector<int> outEdge(int i) {
-		if (data[i] == nullptr) {
+	list<int> outEdge(int n) {
+		if (data[n] == nullptr) {
 			cout << "Node not found" << endl;
-			return vector<int>();
+			return list<int>();
 		}
-		int size = data[i]->edges.size();
-		vector<int> retArr;
-		data[i]->edges.seeAt(0);
+		int size = data[n]->edges.size();
+		list<int> retList;
+		data[n]->edges.seeAt(0);
 		for (int i = 0; i < size; i++) {
 			int j = data[i]->edges.seeNext()->data;
-			retArr.push_back(j);
+			retList.push_back(j);
 		}
-		return retArr;
+		return retList;
 	}
-    vector<int> inEdge(int i) {}
+    list<int> inEdge(int n) {
+		list<int> retList;
+		Vertice v;
+		for (int i = 0; i < MAXSIZE; i++)
+		{
+			v = *data[i];
+			if (v.edges.findItem(n) != nullptr)
+			{
+				retList.push_back(i);
+			}
+		}
+	}
     
 	void breadthFS(int i) {
-		bool *visited  = new bool //vertices not visited
+<<<<<<< HEAD
+		bool *visited  = new bool[n] //vertices not visited are marked
+		for (int j = 0; j < n; j++){
+			visited[j] = false;
+		}
 		list <int> queue; //queue created
+=======
+		bool *visited = new bool; //vertices not visited
+		list<int> queue; //queue created
+>>>>>>> f345122ad779a164d2d285e133e4c82323d44c69
 		visited[i] = true; //node is visited, enqueued
 		queue.push_back(i);
 		
 		while (!queue.empty()) { //dequeues a vertex from the queue 
 			i = queue.front();
+			cout << i << " ";
 			queue.pop_front();
+			for ( j = dequed[i].begin(); i != dequeued[i].end(); ++j) {
+				if (!visited[*j]){ //if a vertice hasn't been visited, enqueue it and mark it as visited
+					visited[*j] = true;
+					queue.push_back(*j);
+				}
+			}
 		}
 	}
 	void depthFS(int i) {}
