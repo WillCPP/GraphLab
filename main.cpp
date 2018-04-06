@@ -100,8 +100,13 @@ int main() {
 			int in;
 			cout << "Enter value of node: ";
 			cin >> in;
-			graph.inEdge(in);
+			vector<int> inVec = graph.inEdge(in);
 			cout << "In edge was called" << endl;
+			cout << "In edges on " << in << endl;
+			for (int i : inVec)
+			{
+				cout << i << endl;
+			}
 			break; }
 		case 7: {// Display the graph as adjancency lists
 			graph.displayGraph();

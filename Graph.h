@@ -57,32 +57,35 @@ public:
 			return false;
 		}
 	}
-	list<int> outEdge(int n) {
+	vector<int> outEdge(int n) {
 		if (data[n] == nullptr) {
 			cout << "Node not found" << endl;
-			return list<int>();
+			return vector<int>();
 		}
 		int size = data[n]->edges.size();
-		list<int> retList;
+		vector<int> retVec;
 		data[n]->edges.seeAt(0);
 		for (int i = 0; i < size; i++) {
 			int j = data[i]->edges.seeNext()->data;
-			retList.push_back(j);
+			retVec.push_back(j);
 		}
-		return retList;
+		return retVec;
 	}
-    list<int> inEdge(int n) {
-		list<int> retList;
+    vector<int> inEdge(int n) {
+		vector<int> retVec;
 		Vertice v;
 		for (int i = 0; i < MAXSIZE; i++)
 		{
-			v = *data[i];
-			if (v.edges.findItem(n) != nullptr)
+			if (data[i] != nullptr)
 			{
-				retList.push_back(i);
+				v = *data[i];
+				if (v.edges.findItem(n) != nullptr)
+				{
+					retVec.push_back(i);
+				}
 			}
 		}
-		return retList;
+		return retVec;
 	}
     
 	void breadthFS(int i) {
@@ -129,12 +132,14 @@ public:
 		cout << "Nodes|  Edges" << endl;
 		for (int i = 0; i < MAXSIZE; i++) {
 			if (data[i] != nullptr) {
-				cout << setw(5) << data[i]->Name;
+				cout << endl << setw(5) << data[i]->Name;
 				cout << "|";
 				data[i]->edges.displayList();
 			}
-			cout << "*********************" << endl;
+			
+			//cout << "*********************" << endl;
 		}
+		cout << endl;
 
 	}
 
