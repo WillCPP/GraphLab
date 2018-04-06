@@ -129,16 +129,16 @@ public:
 
 	void displayGraph() {
 		cout << "*****Displaying Graph*****" << endl;
-		cout << "Nodes|  Edges" << endl;
+		cout << "Node|  Edges" << endl;
 		for (int i = 0; i < MAXSIZE; i++) {
 			if (data[i] != nullptr) {
 				cout << endl << setw(5) << data[i]->Name;
 				cout << "|";
 				data[i]->edges.displayList();
 			}
-			
+
 			//cout << "*********************" << endl;
 		}
 		cout << endl;
-
+	}
 };

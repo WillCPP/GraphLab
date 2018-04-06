@@ -54,35 +54,35 @@ int main() {
 			cout << "Enter value of node: ";
 			cin >> in;
 			graph.addNode(in);
-			cout << "Add node was called." << endl;
+			cout << "addNode was called." << endl;
 			break; }
 		case 2: {//Add edge to graph
 			int node;
 			int edge;
-			cout << "Enter value of node: ";
+			cout << "Enter value of source node: ";
 			cin >> node;
-			cout << "Enter value of edge: ";
+			cout << "Enter value of destination node: ";
 			cin >> edge;
 			graph.addEdge(node,edge);
-			cout << "Add edge was called" << endl;
+			cout << "addEdge was called" << endl;
 			break; }
 		case 3: {//remove an edge from graph
 			int node;
 			int edge;
-			cout << "Enter value of node: ";
+			cout << "Enter value of source node: ";
 			cin >> node;
-			cout << "Enter value of edge: ";
+			cout << "Enter value of destination node: ";
 			cin >> edge;
 			if (graph.removeEdge(node, edge) == nullptr)
 				cout << "Edge was not found" << endl;;
-			cout << "Remove edge was called" << endl;
+			cout << "removeEdge was called" << endl;
 			break; }
 		case 4: {//Find edge in grpah
 			int node;
 			int edge;
-			cout << "Enter value of node: ";
+			cout << "Enter value of source node: ";
 			cin >> node;
-			cout << "Enter value of edge: ";
+			cout << "Enter value of destination node: ";
 			cin >> edge;
 			if (graph.hasEdge(node, edge))
 				cout << "Edge does exist" << endl;
@@ -93,19 +93,24 @@ int main() {
 			int in;
 			cout << "Enter value of node: ";
 			cin >> in;
-			graph.outEdge(in);
-			cout << "Out edge was called" << endl;
+			vector<int> outVec = graph.outEdge(in);
+			cout << "outEdge was called" << endl;
+			cout << "Out edges on " << in << endl;
+			for (int v : outVec)
+			{
+				cout << v << endl;
+			}
 			break; }
 		case 6: {//Find in edges of node
 			int in;
 			cout << "Enter value of node: ";
 			cin >> in;
 			vector<int> inVec = graph.inEdge(in);
-			cout << "In edge was called" << endl;
+			cout << "inEdge was called" << endl;
 			cout << "In edges on " << in << endl;
-			for (int i : inVec)
+			for (int v : inVec)
 			{
-				cout << i << endl;
+				cout << v << endl;
 			}
 			break; }
 		case 7: {// Display the graph as adjancency lists
