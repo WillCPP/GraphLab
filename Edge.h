@@ -2,7 +2,7 @@
 class Edge {
 public:
 	Edge() {}
-	Edge(int c) { data = c; }
+	Edge(int c) { data = c; next = nullptr; }
 	~Edge() {}
 
 	int data = 0;

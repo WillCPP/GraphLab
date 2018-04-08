@@ -26,7 +26,7 @@ public:
 
 public:
 	void addNode(int i) {
-		if(data[i]==nullptr)
+		if(data[i] == nullptr)
 			data[i] = new Vertice(i);
 		else {
 			cout << "Node already exists" << endl;
@@ -166,6 +166,7 @@ public:
 				while (eptr != nullptr)
 				{
 					cout << "->" << eptr->data;
+					eptr = eptr->next;
 				}
 				//data[i]->edges.displayList();
 			}
