@@ -98,32 +98,60 @@ public:
 		queue.push(i);
 		
 		while (!queue.empty()) { //dequeues a vertex from the queue 
-			i = queue.front();
-			cout << i << " ";
+			int c = queue.front();
+			cout << c << " ";
 			queue.pop();
-			for( int j = 0; j < MAXSIZE; j++) {
-				if (!visited[j]){ //if a vertice hasn't been visited, enqueue it and mark it as visited
-					visited[j] = true;
-					queue.push(j);
+			LinkedList ll = data[c]->edges;
+			Edge *eptr = ll.first;
+
+			while (eptr != nullptr)
+			{
+				if (!visited[eptr->data])
+				{
+					visited[eptr->data] = true;
+					queue.push(eptr->data);
 				}
+				eptr = eptr->next;
 			}
+
+			//for( int j = 0; j < MAXSIZE; j++) {
+			//	if (!visited[j]){ //if a vertice hasn't been visited, enqueue it and mark it as visited
+			//		visited[j] = true;
+			//		queue.push(j);
+			//	}
+			//}
 		}
 	}
-	list<int> depthFS(int i) {
+	void depthFS(int i) { //list<int>
 		vector<bool> visited(MAXSIZE);
+		for (int j = 0; j < MAXSIZE; j++) {
+			visited[j] = false;
+		}
 		stack<int> stack; //creates a stack
 		stack.push(i); //will push current node
 		while(!stack.empty()) {
-			i = stack.top();
+			int c = stack.top();
 			stack.pop();
-			if(!visited[i]){ //if not visited
-			cout << i << " ";
-			visited[i] = true;
+			if(!visited[c]){ //if not visited
+				cout << c << " ";
+				visited[c] = true;
 			
+				LinkedList ll = data[c]->edges;
+				Edge *eptr = ll.first;
+
+				while (eptr != nullptr)
+				{
+					if (!visited[eptr->data])
+					{
+						visited[eptr->data] = true;
+						stack.push(eptr->data);
+					}
+					eptr = eptr->next;
+				}
 			}
-			for ( int j = 0; j < MAXSIZE; j++) { //if not visited, push in stack
-				stack.push(i);
-		}
+			//for ( int j = 0; j < MAXSIZE; j++) { //if not visited, push in stack
+			//	stack.push(i);
+			//}
 	  }
 	}
 
@@ -134,7 +162,12 @@ public:
 			if (data[i] != nullptr) {
 				cout << endl << setw(5) << data[i]->Name;
 				cout << "|";
-				data[i]->edges.displayList();
+				Edge *eptr = data[i]->edges.first;
+				while (eptr != nullptr)
+				{
+					cout << "->" << eptr->data;
+				}
+				//data[i]->edges.displayList();
 			}
 
 			//cout << "*********************" << endl;

@@ -28,8 +28,10 @@ int main() {
 			cout << "[5] Find Out Edges of a Node" << endl;
 			cout << "[6] Find In Edges of a Node" << endl;
 			cout << "[7] Display the graph as adjacency list" << endl;
+			cout << "[8] Breadth First Search" << endl;
+			cout << "[9] Depth First Search" << endl;
 			cout << "[0] Quit" << endl;
-			cout << "Enter 0-8: " << endl;
+			cout << "Enter 0-9: " << endl;
 			cin >> choice;
 			if (choice >= 0 && choice <= 8)
 			{
@@ -63,7 +65,7 @@ int main() {
 			cin >> node;
 			cout << "Enter value of destination node: ";
 			cin >> edge;
-			graph.addEdge(node,edge);
+			graph.addEdge(node, edge);
 			cout << "addEdge was called" << endl;
 			break; }
 		case 3: {//remove an edge from graph
@@ -116,6 +118,23 @@ int main() {
 		case 7: {// Display the graph as adjancency lists
 			graph.displayGraph();
 			break; }
+		case 8: {//breadth first search
+			int in;
+			cout << "Enter value of starting node: ";
+			cin >> in;
+			graph.breadthFS(in);
+			cout << endl; 
+			break; }
+		case 9: {
+			int in;
+			cout << "Enter value of starting node: ";
+			cin >> in;
+			graph.depthFS(in); 
+			cout << endl; 
+			break; }
+		default:
+			cout << "Invalid input" << endl;
+			break;
 		}
 		cout << endl;
 

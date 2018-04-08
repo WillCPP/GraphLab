@@ -129,8 +129,8 @@ public:
 	void displayList() {
 		int temp = location;//saves location to not affect our users
 		reset();//resets location so seeNext can be used by our display function
-		while (location<leng) {//Prints each item 
-			cout <<"->"<<seeNext()->data;
+		while (location < leng) {//Prints each item 
+			cout << "->" << seeNext()->data;
 			
 		}
 		location = temp;//reset location to its previous spot
