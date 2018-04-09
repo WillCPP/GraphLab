@@ -33,7 +33,7 @@ int main() {
 			cout << "[0] Quit" << endl;
 			cout << "Enter 0-9: " << endl;
 			cin >> choice;
-			if (choice >= 0 && choice <= 8)
+			if (choice >= 0 && choice <= 9)
 			{
 				validChoice = true;
 			}
@@ -125,7 +125,7 @@ int main() {
 			graph.breadthFS(in);
 			cout << endl; 
 			break; }
-		case 9: {
+		case 9: {//depth first search
 			int in;
 			cout << "Enter value of starting node: ";
 			cin >> in;
@@ -133,7 +133,6 @@ int main() {
 			cout << endl; 
 			break; }
 		default:
-			cout << "Invalid input" << endl;
 			break;
 		}
 		cout << endl;

@@ -3,7 +3,7 @@ class Edge {
 public:
 	Edge() {}
 	Edge(int c) { data = c; next = nullptr; }
-	~Edge() {}
+	~Edge() { if (next != nullptr) { delete next; next = nullptr; } }
 
 	int data = 0;
 	Edge *next = nullptr;

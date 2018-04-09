@@ -10,17 +10,24 @@ using namespace std;
 
 class Graph
 {
-	Vertice **data;
+	vector<Vertice*> data;
 	int MAXSIZE;
 	
 public:
 	Graph() { 
 		MAXSIZE = 100;
-		data = new Vertice*[MAXSIZE]();
+		for (int i = 0; i < MAXSIZE; i++)
+		{
+			data.push_back(nullptr);
+		}
 	}
 	Graph(int max) {
 		MAXSIZE = max;
-		data = new Vertice*[MAXSIZE]();
+		//data = new Vertice*[MAXSIZE]();
+		for (int i = 0; i < MAXSIZE; i++)
+		{
+			data.push_back(nullptr);
+		}
 	}
 	~Graph() {}
 
@@ -97,12 +104,13 @@ public:
 		visited[i] = true; //node is visited, enqueued
 		queue.push(i);
 		
+		int c = -1;
+		Edge *eptr = nullptr;
 		while (!queue.empty()) { //dequeues a vertex from the queue 
-			int c = queue.front();
+			c = queue.front();
 			cout << c << " ";
 			queue.pop();
-			LinkedList ll = data[c]->edges;
-			Edge *eptr = ll.first;
+			eptr = data[c]->edges.first;
 
 			while (eptr != nullptr)
 			{
@@ -113,45 +121,38 @@ public:
 				}
 				eptr = eptr->next;
 			}
-
-			//for( int j = 0; j < MAXSIZE; j++) {
-			//	if (!visited[j]){ //if a vertice hasn't been visited, enqueue it and mark it as visited
-			//		visited[j] = true;
-			//		queue.push(j);
-			//	}
-			//}
+			eptr = nullptr;
 		}
 	}
-	void depthFS(int i) { //list<int>
+	void depthFS(int i) {
 		vector<bool> visited(MAXSIZE);
 		for (int j = 0; j < MAXSIZE; j++) {
 			visited[j] = false;
 		}
 		stack<int> stack; //creates a stack
 		stack.push(i); //will push current node
+
+		int c = -1;
+		Edge *eptr = nullptr;
 		while(!stack.empty()) {
-			int c = stack.top();
+			c = stack.top();
 			stack.pop();
 			if(!visited[c]){ //if not visited
 				cout << c << " ";
 				visited[c] = true;
 			
-				LinkedList ll = data[c]->edges;
-				Edge *eptr = ll.first;
+				eptr = data[c]->edges.first;
 
 				while (eptr != nullptr)
 				{
 					if (!visited[eptr->data])
 					{
-						visited[eptr->data] = true;
 						stack.push(eptr->data);
 					}
 					eptr = eptr->next;
 				}
+				eptr = nullptr;
 			}
-			//for ( int j = 0; j < MAXSIZE; j++) { //if not visited, push in stack
-			//	stack.push(i);
-			//}
 	  }
 	}
 
