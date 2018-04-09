@@ -46,8 +46,9 @@ public:
 		return nullptr;
 	}
 	void addEdge(int i, int j) {
-		if(data[i]!= nullptr)
+		if (data[i] != nullptr) {
 			data[i]->edges.addItem(j);
+		}
 		else {
 			cout << "Node not found, could not add edge" << endl;
 		}
@@ -79,6 +80,10 @@ public:
 		return retVec;
 	}
     vector<int> inEdge(int n) {
+		if (data[n] == nullptr) {
+			cout << "Node not found" << endl;
+			return vector<int>();
+		}
 		vector<int> retVec;
 		Vertice v;
 		for (int i = 0; i < MAXSIZE; i++)
